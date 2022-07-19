@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import HoroscopesContainer from "./components/HoroscopesContainer";
 
 class App extends Component {
   constructor() {
@@ -25,7 +26,7 @@ class App extends Component {
     return (
       <main className="App">
         <h1>Horoscope Generator</h1>
-        <p>Taurus</p>
+        <HoroscopesContainer />
       </main>
     );
   }
