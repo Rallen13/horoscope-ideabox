@@ -1,0 +1,15 @@
+.horoscope-card {
+  text-align: center;
+  width: 20rem;
+  background-color: #ffffff;
+  padding: 2rem;
+  filter: drop-shadow(0 0 0.5rem #cccccc);
+}
+
+.horoscope-details {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 2rem;
+}
