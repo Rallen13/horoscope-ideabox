@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getHoroscope } from "./ApiCalls";
+import Form from "./components/Form";
 import HoroscopesContainer from "./components/HoroscopesContainer";
 
 class App extends Component {
@@ -16,10 +17,18 @@ class App extends Component {
     });
   }
 
+  getNewHoroscope = ({ sign, day }) => {
+    getHoroscope(sign, day).then((data) => {
+      console.log(data);
+      this.setState({ horoscope: data });
+    });
+  };
+
   render() {
     return (
       <main className="App">
         <h1>Generate Horoscope</h1>
+        <Form getNewHoroscope={this.getNewHoroscope} />
         <HoroscopesContainer horoscope={this.state.horoscope} />
       </main>
     );
