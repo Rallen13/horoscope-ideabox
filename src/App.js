@@ -1,21 +1,18 @@
 import React, { Component } from "react";
+import { getHoroscope } from "./ApiCalls";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      horoscope: {
-        date_range: "Apr 21 - May 20",
-        current_date: "July 19, 2022",
-        description:
-          "That shift in the atmosphere around you isn't your imagination. There's a certain something out there that's changed, and it's for the better. You may not be escpecially fond of change in general, but this time you will love it.",
-        compatibility: "Aries",
-        mood: "Curious",
-        color: "Orange",
-        lucky_number: "18",
-        lucky_time: "3pm",
-      },
+      horoscope: {},
     };
+  }
+
+  componentDidMount() {
+    getHoroscope("aries", "today").then((data) => {
+      this.setState({ horoscope: data });
+    });
   }
 
   render() {
